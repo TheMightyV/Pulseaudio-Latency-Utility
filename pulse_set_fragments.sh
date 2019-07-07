@@ -1,7 +1,13 @@
 #!/bin/bash
 
-#default args for my card, most likely not enough for some cards
-#user is expected to input values anyway
+#based on blog https://juho.tykkala.fi/Pulseaudio-and-latency
+#the idea is to set sink's parameters:
+#    tsched=0
+#    fixed_latency_range=yes
+#    fragments=...
+#    fragment_size=...
+#sink's module must be unloaded and reloaded with these parameters
+
 FRAGMENTS=${1:-1}
 FRAGMENT_SIZE=${2:-1000}
 
